@@ -1,0 +1,95 @@
+$dark: #303030;
+$black: #000;
+$white: #fff;
+
+$primary:$dark;
+
+$gray-800 : #B4BAC1;
+
+
+
+$colors:(
+primary: $dark,
+dark: $black,
+white: #fff
+);
+
+
+$font-size-base: 1.6rem;
+
+// text-colors
+$link-color:  #000;
+$link-decoration: none;
+
+
+$gutter: 20px;
+$column:12;
+
+$rounded: false;
+$breakpoints:(
+xs: 0px,
+xm: 450px,
+sm: 576px,
+md: 768px,
+lg: 992px,
+xl: 1200px,
+xxl: 1440px,
+);
+$container:(
+//xs: 100%,
+//xm: 100%,
+//sm: 100%,
+md: 740px,
+lg: 990px,
+xl: 1100px,
+xxl: 1470px,
+);
+
+$display: none, block,  flex,  inline-block,  inline-flex ;
+
+$flex-wrap: wrap, nowrap;
+
+$flex-direction: row, column;
+
+$align-items: (
+start:flex-start,
+end: flex-end,
+center: center,
+stretch: stretch
+);
+
+$align-content: (
+start:flex-start,
+end: flex-end,
+center: center,
+stretch: stretch,
+between: space-between
+);
+
+$justify-content: (
+start:flex-start,
+end: flex-end,
+center: center,
+between: space-between
+);
+
+
+$spacer: 1rem ;
+$spacers: (
+0: 0,
+1: ($spacer * 0.5),
+2: ($spacer * 1),
+3: ($spacer * 1.5),
+4: ($spacer * 2),
+5: ($spacer * 2.5),
+6: ($spacer * 3),
+7: ($spacer * 3.5),
+8: ($spacer * 4),
+9: ($spacer * 4.5),
+10: ($spacer * 5),
+auto: auto   
+);
+
+
+
+

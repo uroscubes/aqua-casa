@@ -1,0 +1,77 @@
+.user-form{
+    padding-bottom: 15rem;
+    .make-account, .log-in{
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-bottom: 2rem;
+        background: #F1F1F1;
+        padding: 4rem 3.4rem;
+        border: none;
+        @media(min-width: 768px){
+            flex: 0 0 48%;
+            max-width: 48%;
+            margin-bottom: 0;
+        }
+        @media(min-width: 992px){
+            flex: 0 0 47.7rem;
+            max-width: 47.7rem;
+        }
+        > div{
+            height: 100%;
+        }
+        .form-group{
+            margin-bottom: 1rem;
+        }
+    }
+    .log-in{
+        margin-bottom: 0;
+        border: .1rem solid #DCDCDC;
+        background: #fff;
+        h3{
+            margin-bottom: 4.3rem;
+        }
+    }
+    &.forgot-password{
+        h3{
+            font-size: 2rem;  
+        }
+    }
+    h2{
+        font-weight: 400;
+        margin-bottom: 4.3rem;
+        text-align: center;
+    }
+    h3{
+        color: $dark;
+        font-size: 2.4rem;
+        font-weight: 400;
+        text-align: center;
+    }
+    .required-fields{
+        margin-bottom: 4.3rem;
+        text-align: center;
+        font-size: 1.4rem;
+        color: #000;
+    }
+    input{
+        display: block;
+        padding: .5rem 1.5rem;
+        width: 100%;
+    }
+    button{
+        padding: 1.2rem 3.4rem;
+        display: block;
+        margin: 2.2rem auto 0 auto;
+        transition: .3s ease;
+        text-transform: uppercase;
+        &:hover{
+            background: lighten($black, 10%);
+        }
+    }
+    a{
+        display: block;
+        text-align: center;
+        font-size: 1.4rem;
+        color: $dark;
+    }
+}

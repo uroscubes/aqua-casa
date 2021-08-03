@@ -1,0 +1,317 @@
+@import "../variable";
+@import '../partials/functions';
+
+
+.fixed-top{
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+.position-relative{
+    position: relative;
+}
+.text-uppercase{
+    text-transform: uppercase !important;
+}
+.text-center{
+    text-align: center;
+}
+.text-right{
+    text-align: right;
+}
+.justify-content-around{
+    justify-content: space-around;
+}
+@media(min-width:576px){
+    .text-sm-right{
+        text-align: right;
+    }
+}
+@media(min-width: 768px){
+    .text-md-left{
+        text-align: left;
+    }
+}
+@media(min-width: 992px){
+    .text-lg-left{
+        text-align: left;
+    }
+}
+.pull-left{
+    float:left;
+}
+.pull-right{
+    float:right;
+}
+%btn{
+    display: inline-block;
+    padding: 10px 25px;
+    @include border-radius(0px);
+    border:none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
+@each $key, $value in $colors { 
+    .btn-#{$key}{
+        @extend %btn;
+        background-color: $value;
+        color: colorYiq($value) !important;
+        &:hover{
+            background-color: darken($value, 10%);
+            color: colorYiq(darken($value, 10%)) !important;
+        }
+    }  
+
+    .btn-outline-#{$key}{
+        @extend %btn;
+        background-color: transparent;
+        color: $value !important;
+        border: 2px solid $value;
+        transition: 0.5s linear;
+        &:hover{
+            background-color: $value;
+            color: colorYiq($value) !important;
+        }
+    } 
+    .bg-#{$key}{
+        background-color: $value;
+    } 
+    .text-#{$key}{
+        color: $value !important;
+    } 
+}
+
+
+.row{
+    margin-left: -$gutter/2;
+    margin-right: -$gutter/2;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    > [class*="col-"]{
+        width: 100%;
+        padding-left: $gutter/2;
+        padding-right: $gutter/2;
+    }
+    &.no-gutters{
+        margin-left: 0px !important;
+        margin-right: 0px !important;
+        > [class*="col-"]{
+            padding-left: 0px !important;
+            padding-right: 0px !important;
+        }
+    }
+}
+
+
+@each $breakpoint-key, $breakpoint-value in $breakpoints {
+    // if scope remove breakpoint name for
+    @if($breakpoint-value == 0px){
+
+        .container, .container-fluid{
+                width: 100%;
+                max-width: 100%;
+                padding-left: $gutter/2;
+                padding-right: $gutter/2;
+                margin-left: auto;
+                margin-right: auto;
+        }
+        
+
+        @for $i from 1 to ($column + 1){
+            .col-#{$i}{
+                flex: 0 0 (100% / ($column/$i));
+                max-width: (100% / ($column/$i));
+                
+            }
+        }
+
+        @each $spacer-size, $spacer-value in $spacers{
+            .m-#{$spacer-size}{
+                margin: $spacer-value !important;
+            }
+            .mt-#{$spacer-size}{
+                margin-top: $spacer-value !important;
+            }
+            .mr-#{$spacer-size}{
+                margin-right: $spacer-value !important;
+            }
+            .ml-#{$spacer-size}{
+                margin-left: $spacer-value !important;
+            }
+            .mb-#{$spacer-size}{
+                margin-bottom: $spacer-value !important;
+            }
+            .mx-#{$spacer-size}{
+                margin-left: $spacer-value !important;
+                margin-right: $spacer-value !important;
+            }
+            .p-#{$spacer-size}{
+                padding: $spacer-value !important;
+            }
+            .pt-#{$spacer-size}{
+                padding-top: $spacer-value !important;
+            }
+            .pr-#{$spacer-size}{
+                padding-right: $spacer-value !important;
+            }
+            .pb-#{$spacer-size}{
+                padding-bottom: $spacer-value !important;
+            }
+            .pl-#{$spacer-size}{
+                padding-left: $spacer-value !important;
+            }
+            .px-#{$spacer-size}{
+                padding-left: $spacer-value !important;
+                padding-right: $spacer-value !important;
+            }
+            .py-#{$spacer-size}{
+                padding-top: $spacer-value !important;
+                padding-bottom: $spacer-value !important;
+            }
+        };
+
+        @each $d in $display{
+            .d-#{$d}{
+                display: $d;
+            }
+           }  // @each end
+
+           @each $wrap in $flex-wrap{
+            .flex-#{$wrap}{
+                flex-wrap: $wrap;
+            }
+           }  // @each end
+
+           @each $direction in $flex-direction{
+            .flex-#{$direction}{
+                flex-direction: $direction;
+            }
+           }  // @each end
+
+           @each $align-key, $align-value in $align-items{
+            .align-items-#{$align-key}{
+                align-items: $align-value;
+            }
+           }  // @each end
+
+           @each $align-key, $align-value in $align-content{
+            .align-content-#{$align-key}{
+                align-content: $align-value;
+            }
+           }  // @each end
+
+           @each $justify-key, $justify-value in $justify-content{
+            .justify-content-#{$justify-key}{
+                justify-content: $justify-value;
+            }
+           }  // @each end
+    } 
+    @else{
+        @media(min-width: #{$breakpoint-value}){
+
+            .container{
+                max-width:map-get($map: $container, $key: $breakpoint-key);
+            }
+
+            @for $i from 1 to ($column + 1){
+                .col-#{$breakpoint-key}-#{$i}{
+                    flex: 0 0 (100% / ($column/$i));
+                    max-width: (100% / ($column/$i));
+                }
+            }
+            @each $spacer-size, $spacer-value in $spacers{
+            .m-#{$breakpoint-key}-#{$spacer-size}{
+                margin: $spacer-value !important;
+            }
+            .mt-#{$breakpoint-key}-#{$spacer-size}{
+                margin-top: $spacer-value !important;
+            }
+            .mr-#{$breakpoint-key}-#{$spacer-size}{
+                margin-right: $spacer-value !important;
+            }
+            .ml-#{$breakpoint-key}-#{$spacer-size}{
+                margin-left: $spacer-value !important;
+            }
+            .mb-#{$breakpoint-key}-#{$spacer-size}{
+                margin-bottom: $spacer-value !important;
+            }
+            .mx-#{$breakpoint-key}-#{$spacer-size}{
+                margin-left: $spacer-value !important;
+                margin-right: $spacer-value !important;
+            }
+
+            .p-#{$breakpoint-key}-#{$spacer-size}{
+                padding: $spacer-value !important;
+            }
+            .pt-#{$breakpoint-key}-#{$spacer-size}{
+                padding-top: $spacer-value !important;
+            }
+            .pr-#{$breakpoint-key}-#{$spacer-size}{
+                padding-right: $spacer-value !important;
+            }
+            .pb-#{$breakpoint-key}-#{$spacer-size}{
+                padding-bottom: $spacer-value !important;
+            }
+            .pl-#{$breakpoint-key}-#{$spacer-size}{
+                padding-left: $spacer-value !important;
+            }
+            .px-#{$breakpoint-key}-#{$spacer-size}{
+                padding-left: $spacer-value !important;
+                padding-right: $spacer-value !important;
+            }
+            .py-#{$breakpoint-key}-#{$spacer-size}{
+                padding-top: $spacer-value !important;
+                padding-bottom: $spacer-value !important;
+            }
+        };
+            
+            @each $d in $display{
+             .d-#{$breakpoint-key}-#{$d}{
+                 display: $d;
+             }
+            }  // @each end
+
+            @each $wrap in $flex-wrap{
+                .flex-#{$breakpoint-key}-#{$wrap}{
+                    flex-wrap: $wrap;
+                }
+               }  // @each end
+
+               @each $direction in $flex-direction{
+                .flex-#{$breakpoint-key}-#{$direction}{
+                    flex-direction: $direction;
+                }
+               }  // @each end 
+
+            @each $align-key, $align-value in $align-items{
+                .align-items-#{$breakpoint-key}-#{$align-key}{
+                    align-items: $align-value;
+                }
+               }  // @each end
+
+
+               @each $align-key, $align-value in $align-content{
+                .align-content-#{$breakpoint-key}-#{$align-key}{
+                    align-content: $align-value;
+                }
+               }  // @each end
+
+
+               @each $justify-key, $justify-value in $justify-content{
+                .justify-content-#{$breakpoint-key}-#{$justify-key}{
+                    justify-content: $justify-value;
+                }
+               }  // @each end
+
+
+          }// @media end
+    }
+    
+}
+

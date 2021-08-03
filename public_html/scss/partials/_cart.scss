@@ -1,0 +1,158 @@
+.cart{
+    padding-bottom: 7rem;
+    h2{
+        font-weight: 400;
+        padding-bottom: 2rem;
+        border-bottom: .1rem solid #707070;
+    }
+    .basket-product{
+        padding: 3rem 0;
+        border-bottom: .1rem solid #707070;
+        .product-image{
+            figure{
+                max-width: 20.6rem;
+                text-align: center;
+                display: block;
+                margin: 0 auto;
+                img{
+                    max-height: 16.1rem;
+                }
+            }
+            @media(min-width:768px){
+                flex: 0 0 20%;
+                max-width: 20%;
+                margin: 0;
+            }
+            @media(min-width: 992px){
+                flex: 0 0 14.5%;
+                max-width: 14.5%;
+            }
+        }
+        .product-info{
+            text-align: center;
+            margin: 2rem 0;
+            @media(min-width:768px){
+                text-align: left;
+                flex: 0 0 20%;
+                max-width: 20%;
+                margin: 0;
+            }
+            @media(min-width: 1440px){
+                flex: 0 0 13%;
+                max-width: 13%;
+            }
+            a{
+                color: $dark;
+                font-size: 2rem;
+            }
+        }
+        .quantity{
+            @media(min-width: 768px){
+                flex: 0 0 20%;
+                max-width: 20%;
+            }
+            @media(min-width: 992px){
+                flex: 0 0 25%;
+                max-width: 25%;
+            }
+            @media(min-width: 1440px){
+                flex: 0 0 40%;
+                max-width: 40%;
+            }
+            button{
+                background: #D6D6D6;
+                height: 3.8rem;
+                width: 3.8rem;
+                color: $dark;
+                border-radius: .6rem;
+            }
+            input{
+                width: 4.4rem;
+                height: 4rem;
+                margin: 0 .9rem;
+                text-align: center;
+            }
+        }
+        .price{
+            text-align: center;
+            margin: 2rem 0;
+            @media(min-width: 768px){
+                text-align: left;
+                margin: 0;
+            }
+            font-size: 1.8rem;
+            color: $dark;
+            font-weight: bold;
+        }
+        .delete{
+            display: flex;
+            justify-content: center;
+            i{
+                font-size: 3.1rem;
+                line-height: 2.1rem;
+            }
+        }
+    }
+    .promo-code-holder{
+        padding: 2.5rem 0;
+        @media(min-width: 768px){
+            flex: 0 0 35%;
+            max-width: 35%;
+        }
+        @media(min-width: 992px){
+            flex: 0 0 auto;
+            max-width: 100%;
+        }
+        p{
+            color: $dark;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            @media(min-width:768px){
+                text-align: left;
+            }
+        }
+        input{
+            padding: 0 1.6rem;
+            height: 4rem;
+            margin-right: 1.8rem;
+            @media(min-width:768px){
+                margin-right: 0;
+            }
+            @media(min-width:992px){
+                margin-right: 1.8rem;
+            }
+        }
+        button{
+            letter-spacing: 0;
+            font-size: 1.6rem;
+            padding: 1.1rem 3.1rem;
+            transition: .3s ease;
+        }
+    }
+    .total-price{
+        padding: 2.5rem 0;
+        p{
+            font-size: 2rem;
+            color: $dark;
+            @media(min-width:768px){
+                margin-right: 8rem;
+                text-align: left;
+            }
+        }
+        span{
+            font-weight: bold;
+            font-size: 2.4rem;
+            color: $dark;
+            @media(min-width:768px){
+                text-align: left;
+            }
+        }
+        button{
+            margin-top: 2.7rem;
+            text-transform: uppercase;
+            letter-spacing: .416rem;
+            padding: 1.4rem 5rem;
+            transition: .3s ease;
+        }
+    }
+}

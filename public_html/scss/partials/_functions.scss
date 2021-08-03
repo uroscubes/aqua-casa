@@ -1,0 +1,69 @@
+/*
+    Created on : 22.05.2020., 10.21.14
+    Author     : vladandzulovic
+*/
+@mixin textRestriction($font-size, $line-height, $row, $fixed:false){
+    font-size: #{$font-size}rem !important;
+    line-height: #{$line-height}rem !important;
+    overflow: hidden;
+    @if($fixed){
+        height: #{$row * $line-height}rem;
+        max-height: none;
+    }@else{
+        max-height: #{$row * $line-height}rem;
+        height: auto;
+    }    
+}
+
+@mixin d-flex(){
+    display:-webkit-box ;
+    display:-ms-flexbox ;
+    display:flex ;
+}
+
+@mixin align-top(){
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+}
+
+@mixin flex-column(){
+    flex-direction: column;
+    -webkit-flex-direction: column;
+}
+@mixin flex-row(){
+    -webkit-box-orient:horizontal;
+    -webkit-box-direction:normal;
+        -ms-flex-direction:row;
+            flex-direction:row
+}
+@mixin self-stretch(){
+    align-self: stretch;
+    -webkit-aligh-self: stretch;
+}
+@mixin border-radius($radius){
+    @if($rounded){
+        border-radius: $radius;
+    }@else{
+        border-radius: 0px;
+    }
+}
+
+@mixin clearfix() {
+    &::after {
+      display: block;
+      clear: both;
+      content: "";
+    }
+  }
+  @function colorYiq($color){   
+    $r: red($color);
+    $g: green($color);
+    $b: blue($color);   
+    $yiq : $r*0.299 + $g*0.587 + $b*0.114;  
+    @if($yiq < 150){
+        @return #fff;
+    }@else{
+        @return #000;
+    }  
+}

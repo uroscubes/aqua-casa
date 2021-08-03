@@ -1,0 +1,13 @@
+.single-news{
+    .news-item-image{
+        &::after{
+            padding-top: 31.50%;
+        }
+    }
+}
+.related-news{
+    h2{
+        font-size: 4rem;
+        margin-bottom: 3rem;
+    }
+}
