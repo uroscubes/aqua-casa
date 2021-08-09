@@ -1,4 +1,4 @@
-.cart{
+.cart, .order, .wish-list-section{
     padding-bottom: 7rem;
     h2{
         font-weight: 400;
@@ -153,6 +153,156 @@
             letter-spacing: .416rem;
             padding: 1.4rem 5rem;
             transition: .3s ease;
+        }
+    }
+}
+.order{
+    .order-title{
+        text-align: center;
+        margin-bottom: 5rem;
+        border-bottom: .1rem solid rgba(0,0,0,.1);
+        padding-bottom: 5rem;
+        h1{
+            font-weight: 500;
+            margin-bottom: 2rem;
+            font-size: 4rem;
+            color: #303030;
+            @media(min-width: 768px){
+                font-size: 5rem;
+            }
+        }
+    }
+    .order-status{
+        color: #303030;
+        margin-bottom: 3.5rem;
+        .order-last-change{
+            font-size: 1.3rem;
+            color: #959595;
+        }
+        h3{
+            font-size: 3rem;
+            font-weight: 500;
+            @media(min-width: 1200px){
+                font-size: 4rem;
+            }
+        }
+        .order-status-color{
+            text-transform: uppercase;
+            span{
+                display: inline-block;
+                width: 1rem;
+                height: 1.4rem;
+                background: green;
+            }
+        }
+    }
+    .basket-product{
+        .product-info{
+            flex: 0 0 auto;
+            max-width: 100%;
+            @media(min-width: 992px){
+                flex: 0 0 40%;
+                max-width: 40%;
+            }
+            @media(min-width: 1200px){
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
+        }
+        .quantity{
+            display: none;
+        }
+        .delete{
+            display: none;
+        }
+    }
+    .order-customer-info{
+        p{
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            span{
+                text-decoration: underline;
+            }
+        }
+        a{
+            display: block;
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            color: #959595;
+        }
+        .total-price{
+            margin: 0;
+            padding: 0;
+            span{
+                text-decoration: none;
+            }
+        }
+    }
+    .order-customer-address{
+        border-top: .1rem solid rgba(0,0,0,.1);
+        border-bottom: .1rem solid rgba(0,0,0,.1);
+        padding: 3rem 0;
+        margin: 3rem 0;
+        div{
+            margin-bottom: 3rem;
+            &:last-of-type{
+                margin-bottom: 0;
+            }
+            @media(min-width: 768px){
+                margin-bottom: 0px;
+            }
+        }
+    }
+}
+
+.wish-list-section{
+    .wish-list-title{
+        text-align: center;
+        margin-bottom: 5rem;
+        border-bottom: .1rem solid rgba(0,0,0,.1);
+        padding-bottom: 5rem;
+        h1{
+            font-weight: 500;
+            margin-bottom: 2rem;
+            font-size: 4rem;
+            color: #303030;
+            @media(min-width: 768px){
+                font-size: 5rem;
+            }
+        }
+        img{
+            width: 5rem;
+        }
+    }
+    .basket-product{
+        .product-info{
+            flex: 0 0 auto;
+            max-width: 100%;
+            @media(min-width: 768px){
+                flex: 0 0 30%;
+                max-width: 30%;
+            }
+            @media(min-width: 992px){
+                flex: 0 0 40%;
+                max-width: 40%;
+            }
+            @media(min-width: 1200px){
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
+        }
+        .quantity{
+            display: none;
+        }
+        .delete{
+            display: none;
+        }
+        .wish-list{
+            display: flex;
+            justify-content: center;
+            img{
+                width: 2.5rem;
+            }
         }
     }
 }
